@@ -1,0 +1,18 @@
+import pandas as pd
+
+DATA = [
+    ("Your account has been suspended. Verify at http://fake-bank.com/login", "phishing"),
+    ("Congratulations, you won a lottery! Claim now.", "scam"),
+    ("Send me money or else!", "harassment"),
+    ("Let's meet tomorrow at the cafe.", "safe"),
+    ("Update your password at http://malicious.site/reset", "phishing"),
+    ("Please help me, transfer 10,000 INR urgently.", "scam"),
+    ("You stupid idiot!", "harassment"),
+    ("Important: verify delivery at http://trackme.com", "phishing"),
+    ("Reminder: Your bill is due today.", "safe"),
+]
+
+df = pd.DataFrame(DATA, columns=["text", "label"])
+df.to_csv("../sample_data/demo_cyber_data.csv", index=False)
+
+print("CSV CREATED at sample_data/demo_cyber_data.csv")
